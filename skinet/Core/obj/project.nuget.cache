@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "KQ4qcfArVrYy4NsqpANIIPBxKDS4jf/JqyXQ4OebU/kO6ZT3NqcjaRL12ymEfHVQH9imzBZm/W88WksRxep0hg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj",
+  "expectedPackageFiles": [
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}
