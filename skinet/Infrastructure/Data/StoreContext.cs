@@ -1,3 +1,4 @@
+using System.Reflection;
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
 
@@ -16,6 +17,13 @@ namespace Infrastructure.Data
         //24. Add 2 new properties, 2 new tables, Products will now have foreing key pointing to 2 tables below aswell as the one above...
         public DbSet<ProductBrand> ProductBrands {get; set;}
         public DbSet<ProductType> ProductTypes {get; set;}
+
+        //26. override method in DbContext, tell it to look for configurations file (ProductConfiguration)
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            base.OnModelCreating(modelBuilder);
+            modelBuilder.ApplyConfigurationsFromAssembly(Assembly.GetExecutingAssembly());
+        }
 
     }
 }
