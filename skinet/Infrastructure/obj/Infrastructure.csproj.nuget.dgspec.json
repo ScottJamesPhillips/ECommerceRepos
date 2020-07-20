@@ -1,7 +1,7 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {}
+    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {}
   },
   "projects": {
     "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
@@ -62,14 +62,14 @@
         }
       }
     },
-    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Infrastructure\\Infrastructure.csproj": {
+    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
-        "projectName": "Infrastructure",
-        "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Infrastructure\\Infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
+        "projectName": "infrastructure",
+        "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
         "packagesPath": "C:\\Users\\sphillips\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

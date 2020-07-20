@@ -7,7 +7,7 @@
   "targets": {
     ".NETStandard,Version=v2.0": {},
     ".NETStandard,Version=v2.0/": {
-      "Infrastructure/1.0.0": {
+      "infrastructure/1.0.0": {
         "dependencies": {
           "Core": "1.0.0",
           "Microsoft.EntityFrameworkCore": "3.1.5",
@@ -15,7 +15,7 @@
           "NETStandard.Library": "2.0.3"
         },
         "runtime": {
-          "Infrastructure.dll": {}
+          "infrastructure.dll": {}
         }
       },
       "Microsoft.Bcl.AsyncInterfaces/1.1.1": {
@@ -408,7 +408,7 @@
     }
   },
   "libraries": {
-    "Infrastructure/1.0.0": {
+    "infrastructure/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
