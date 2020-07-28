@@ -20,6 +20,17 @@ namespace Infrastructure.Data
                 query = query.Where(spec.Criteria);
             }
 
+            //59.
+            if(spec.OrderBy != null)
+            {
+                query = query.OrderBy(spec.OrderBy);
+            }
+
+            if(spec.OrderByDescending != null)
+            {
+                query = query.OrderByDescending(spec.OrderByDescending);
+            }
+
             //37. Includes is an aggregate, sums all includes statements
             query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
 

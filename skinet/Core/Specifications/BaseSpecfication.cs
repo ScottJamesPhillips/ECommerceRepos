@@ -25,10 +25,25 @@ namespace Core.Specifications
         //36. Includes will contain list of 'includes()' statements we can use to list async methods, default as an empty list
         public List<Expression<Func<T, object>>> Includes {get;} = new List<Expression<Func<T, object>>>();
 
+        public Expression<Func<T, object>> OrderBy {get; private set;}
+
+        public Expression<Func<T, object>> OrderByDescending {get; private set;}
+
         //36. Create a method to add include statements to our include list
         protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
             Includes.Add(includeExpression);
+        }
+
+        //59.
+        public void AddOrderBy(Expression<Func<T, object>> orderByExpression)
+        {
+            OrderBy = orderByExpression;
+        }
+
+        public void AddOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
+        {
+            OrderByDescending = orderByDescendingExpression;
         }
     }
 }
