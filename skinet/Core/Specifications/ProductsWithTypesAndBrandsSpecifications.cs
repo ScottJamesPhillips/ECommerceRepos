@@ -5,17 +5,24 @@ namespace Core.Specifications
     public class ProductsWithTypesAndBrandsSpecifications : BaseSpecfication<Product>
     {
         //39. Created new spec extending from BaseSpecification type Product, had to go to BaseSpecification first and create constructor with no params first
-        public ProductsWithTypesAndBrandsSpecifications(string sort)
+        public ProductsWithTypesAndBrandsSpecifications(ProductSpecParams _params) :
+        base(x =>
+            (string.IsNullOrEmpty(_params.Search) || x.Name.ToLower().Contains(_params.Search)) &&
+            (!_params.BrandId.HasValue || x.ProductBrandId == _params.BrandId) &&
+            (!_params.TypeId.HasValue || x.ProductTypeId == _params.TypeId)
+            )
         {
             //39. Generate this constructor, and bring in (include) producttype and productbrand, so can use this specification inside product controller
             AddInclude(x => x.ProductType);
             AddInclude(x => x.ProductBrand);
             AddOrderBy(x => x.Name);
+            ApplyPaging(_params.PageSize * (_params.PageIndex - 1),
+            _params.PageSize);
 
             //59.
-            if (!string.IsNullOrEmpty(sort))
+            if (!string.IsNullOrEmpty(_params.Sort))
             {
-                switch (sort)
+                switch (_params.Sort)
                 {
                     case "priceAsc":
                         AddOrderBy(p => p.Price);
@@ -39,6 +46,4 @@ namespace Core.Specifications
             AddInclude(x => x.ProductBrand);
         }
     }
-
-
 }

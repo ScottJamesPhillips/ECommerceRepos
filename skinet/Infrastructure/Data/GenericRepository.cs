@@ -45,6 +45,12 @@ namespace Infrastructure.Data
             return await ApplyOurSpecification(spec).ToListAsync();
         }
 
+        //65.
+        public async Task<int> CountAsync(ISpecification<T> spec)
+        {
+            return await ApplyOurSpecification(spec).CountAsync();
+        }
+
         //38.Build another method to allow us to apply our specifications
         private IQueryable<T> ApplyOurSpecification(ISpecification<T> spec)
         {
@@ -52,5 +58,7 @@ namespace Infrastructure.Data
             //so passes into GetQuery method in SpecificationEvaluator, and inputQuery parameter will be of type 'product' as that is passed in...
             return SpecificationEvaluator<T>.GetQuery(_context.Set<T>().AsQueryable(), spec); 
         }
+
+        
     }
 }

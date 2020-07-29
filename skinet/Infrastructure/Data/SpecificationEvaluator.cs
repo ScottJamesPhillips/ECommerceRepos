@@ -31,6 +31,12 @@ namespace Infrastructure.Data
                 query = query.OrderByDescending(spec.OrderByDescending);
             }
 
+            //63. Adding Pagination Part 1
+            if(spec.IsPagingEnabled)
+            {
+                query = query.Skip(spec.Skip).Take(spec.Take);
+            }
+
             //37. Includes is an aggregate, sums all includes statements
             query = spec.Includes.Aggregate(query, (current, include) => current.Include(include));
 

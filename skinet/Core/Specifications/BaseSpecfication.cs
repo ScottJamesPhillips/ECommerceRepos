@@ -29,6 +29,12 @@ namespace Core.Specifications
 
         public Expression<Func<T, object>> OrderByDescending {get; private set;}
 
+        public int Take {get; private set;}
+
+        public int Skip {get; private set;}
+
+        public bool IsPagingEnabled {get; private set;}
+
         //36. Create a method to add include statements to our include list
         protected void AddInclude(Expression<Func<T, object>> includeExpression)
         {
@@ -44,6 +50,13 @@ namespace Core.Specifications
         public void AddOrderByDescending(Expression<Func<T, object>> orderByDescendingExpression)
         {
             OrderByDescending = orderByDescendingExpression;
+        }
+
+        public void ApplyPaging(int skip, int take)
+        {
+            Skip = skip;
+            Take = take;
+            IsPagingEnabled = true;
         }
     }
 }
