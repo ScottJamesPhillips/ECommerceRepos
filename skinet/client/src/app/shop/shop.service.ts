@@ -5,13 +5,15 @@ import {IBrand} from '../shared/models/brands';
 import {IType} from '../shared/models/productType';
 import {map, delay} from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
+import { IProduct } from '../shared/models/product';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 
 export class ShopService {
-  baseUrl = 'https://localhost:5001/api/';
+  baseUrl = environment.apiUrl;
   constructor(private http: HttpClient) {
  }
   // tslint:disable-next-line: typedef
@@ -51,4 +53,9 @@ export class ShopService {
   getTypes(){
     return this.http.get<IType[]>(this.baseUrl + 'products/types');
   }
+  // tslint:disable-next-line: typedef
+  getProduct(id: number){
+    return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
+  }
+
 }
