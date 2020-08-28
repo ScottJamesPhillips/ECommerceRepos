@@ -1,8 +1,9 @@
-<div class="container">
+<div class="container mt-5">
   <div class="row">
 
 
     <section class="col-3">
+      <ng-container *ngIf="types && brands">
       <!--Sorting Products-->
       <h5 class="text-warning ml-3">Sort</h5>
       <select class="custom-select mb-3" (change)="onSortSelected($event.target.value)">
@@ -29,6 +30,7 @@
           {{type.name}}
         </li>
       </ul>
+    </ng-container>
     </section>
 
 
@@ -42,7 +44,7 @@
         [pageNum] = "this.shopParams.pageNum"
         ></app-paging-header>
         
-        <div class="form-inline mt-2">
+        <div class="form-inline mt-2" *ngIf="products">
           <!--Search and reset button-->
           <input (keyup.enter)="onSearch()" class="form-control mr-2" #search style="width: 300px" placeholder="Search" type="text">
           <button (click)="onSearch()" class="btn btn-outline-primary my-2">Search</button>

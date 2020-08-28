@@ -2,7 +2,7 @@ import {HttpInterceptor, HttpRequest, HttpHandler, HttpEvent} from '@angular/com
 import { Observable, throwError } from 'rxjs';
 import { Router, NavigationExtras } from '@angular/router';
 import { Injectable } from '@angular/core';
-import { catchError } from 'rxjs/operators';
+import { catchError, delay } from 'rxjs/operators';
 import { ToastrService } from 'ngx-toastr';
 
 // Must be injectabel to be usable
@@ -16,6 +16,7 @@ export class ErrorInterceptor implements HttpInterceptor {
     // intercept HttpRequest(outgoing) and HttpHandler(incoming/response) - aim to catch response errors and handle
     intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
         return next.handle(req).pipe(
+            delay(1000),
             catchError(error => {
                 if (error){
                     if (error.status === 400){
