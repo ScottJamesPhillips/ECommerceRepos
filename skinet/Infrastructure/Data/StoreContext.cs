@@ -2,6 +2,9 @@ using System.Linq;
 using System.Reflection;
 using Core.Entities;
 using Microsoft.EntityFrameworkCore;
+using Core.Entities.OrderAggregate;
+using System;
+using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Infrastructure.Data
 {
@@ -18,6 +21,11 @@ namespace Infrastructure.Data
         //24. Add 2 new properties, 2 new tables, Products will now have foreing key pointing to 2 tables below aswell as the one above...
         public DbSet<ProductBrand> ProductBrands { get; set; }
         public DbSet<ProductType> ProductTypes { get; set; }
+        //210.
+        public DbSet<Order> Orders { get; set; }
+        public DbSet<OrderItem> OrderItems { get; set; }
+        public DbSet<DeliveryMethod> DeliveryMethods { get; set; }
+
 
         //26. override method in DbContext, tell it to look for configurations file (ProductConfiguration)
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -31,10 +39,25 @@ namespace Infrastructure.Data
             {
                 foreach (var entityType in modelBuilder.Model.GetEntityTypes())
                 {
-                    var properties = entityType.ClrType.GetProperties().Where(p => p.PropertyType == typeof(decimal));
+                    var properties = entityType.ClrType.GetProperties()
+                        .Where(p => p.PropertyType == typeof(decimal));
+
+                        
+                    //223
+                    var dateTimeProperties = entityType.ClrType.GetProperties()
+                        .Where(p => p.PropertyType == typeof(DateTimeOffset));
+
                     foreach (var property in properties)
                     {
-                        modelBuilder.Entity(entityType.Name).Property(property.Name).HasConversion<double>();
+                        modelBuilder.Entity(entityType.Name).Property(property.Name)
+                        .HasConversion<double>();
+                    }
+
+                    //223
+                    foreach (var property in dateTimeProperties)
+                    {
+                        modelBuilder.Entity(entityType.Name).Property(property.Name)
+                        .HasConversion(new DateTimeOffsetToBinaryConverter());
                     }
                 }
             }

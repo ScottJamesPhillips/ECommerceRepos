@@ -1,10 +1,10 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { environment } from '../../environments/environment';
-import { BehaviorSubject, ReplaySubject } from 'rxjs';
+import { BehaviorSubject, ReplaySubject, of } from 'rxjs';
 import { IUser } from '../shared/models/user';
 import { map } from 'rxjs/operators';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -57,7 +57,7 @@ export class AccountService {
   {
     if (token === null){
       this.currentUserSource.next(null);
-      return;
+      return of(null);
     }
 
     let headers = new HttpHeaders();

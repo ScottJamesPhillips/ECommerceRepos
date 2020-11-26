@@ -46,7 +46,4 @@ export class TextInputsComponent implements OnInit, ControlValueAccessor {
     this.onTouched = fn;
   }
 
-  // setDisabledState?(isDisabled: boolean): void {
-  //   throw new Error("Method not implemented.");
-  // }
 }

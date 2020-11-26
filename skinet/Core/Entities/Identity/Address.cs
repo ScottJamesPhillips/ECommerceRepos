@@ -1,7 +1,6 @@
 using System.ComponentModel.DataAnnotations;
-using Core.Entities.Identity;
 
-namespace Core.Entities
+namespace Core.Entities.Identity
 {
     public class Address
     {
