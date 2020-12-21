@@ -5,6 +5,7 @@ import { BehaviorSubject, ReplaySubject, of } from 'rxjs';
 import { IUser } from '../shared/models/user';
 import { map } from 'rxjs/operators';
 import { Router } from '@angular/router';
+import { IAddress} from '../shared/models/address';
 
 @Injectable({
   providedIn: 'root'
@@ -72,4 +73,19 @@ export class AccountService {
       })
     );
   }
+
+  // 242
+  // tslint:disable-next-line:typedef
+  getUserAddress()
+  {
+    return this.http.get<IAddress>(this.baseUrl + 'account/address/');
+  }
+
+  // 242
+  // tslint:disable-next-line:typedef
+  updateUserAddress(address: IAddress)
+  {
+    return this.http.put<IAddress>(this.baseUrl + 'account/address/', address);
+  }
+
 }

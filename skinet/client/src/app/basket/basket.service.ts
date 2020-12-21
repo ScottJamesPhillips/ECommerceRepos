@@ -6,19 +6,30 @@ import { IBasket, IBasketItem, IBasketTotals } from '../shared/models/basket';
 import { map } from 'rxjs/operators';
 import { IProduct } from '../shared/models/product';
 import {Basket} from '../shared/models/basket';
+import { IDeliveryMethod } from '../shared/models/deliveryMethods';
 
 @Injectable({
   providedIn: 'root'
 })
-export class BasketService {
 
+export class BasketService {
   baseUrl = environment.apiUrl;
   private basketSource = new BehaviorSubject<IBasket>(null);
   basket$ = this.basketSource.asObservable();
   private basketTotalSource = new BehaviorSubject<IBasketTotals>(null);
   basketTotal$ = this.basketTotalSource.asObservable();
+  shipping = 0;
 
   constructor(private http: HttpClient) { }
+
+  // 244
+  // tslint:disable-next-line:typedef
+  setShippingPrice(deliveryMethod: IDeliveryMethod)
+  {
+    this.shipping = deliveryMethod.price;
+    this.calculateTotals();
+  }
+
     // tslint:disable-next-line:typedef
     getBasket(id: string)
     {
@@ -107,6 +118,17 @@ export class BasketService {
       this.setBasket(basket);
     }
 
+  // 244
+  // tslint:disable-next-line:typedef
+  private calculateTotals()
+  {
+    const basket = this.getCurrentBasketValue();
+    const shipping = this.shipping;
+    const subtotal = basket.items.reduce((a, b) => (b.price * b.quantity) + a,  0);
+    const total = subtotal + shipping;
+    this.basketTotalSource.next({shipping, total, subtotal});
+  }
+
     private addOrUpdateItem(items: IBasketItem[], itemToAdd: IBasketItem, quantity: number): IBasketItem[] {
       // check for item id, if already exists in basket then know only want to increase quantity rather than add productId to basket...
       const index = items.findIndex(i => i.id === itemToAdd.id);
@@ -122,11 +144,11 @@ export class BasketService {
       return items;
     }
 
-  createBasket(): IBasket {
-    const basket = new Basket();
-    localStorage.setItem('basket_id', basket.id);
-    return basket;
-  }
+    createBasket(): IBasket {
+      const basket = new Basket();
+      localStorage.setItem('basket_id', basket.id);
+      return basket;
+    }
 
     private mapProductItemToBasketItem(item: IProduct, quantity: number): IBasketItem {
       return{
@@ -150,4 +172,14 @@ export class BasketService {
       console.log('Total:' + total);
       this.basketTotalSource.next({shipping, total, subtotal});
     }
+
+    // 246
+    // tslint:disable-next-line:typedef
+    deleteLocalBasket(id: string){
+      this.basketSource.next(null);
+      this.basketTotalSource.next(null);
+      localStorage.removeItem('basket_id');
+    }
+
+
   }
