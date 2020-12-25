@@ -25,5 +25,4 @@ export class OrderDetailedComponent implements OnInit {
       console.log(error);
     });
   }
-
 }
