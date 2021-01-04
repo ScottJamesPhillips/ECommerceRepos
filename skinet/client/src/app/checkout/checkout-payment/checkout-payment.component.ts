@@ -89,10 +89,26 @@ cardHandler = this.onChange.bind(this);
     const orderToCreate = this.getOrderToCreate(basket);
     this.checkoutService.createOrder(orderToCreate).subscribe((order: IOrder) => {
        this.toastr.success('Order created succesfully');
-       this.basketService.deleteLocalBasket(basket.id);
-      //  console.log(order);
-       const navigationExtras: NavigationExtras = {state: order};
-       this.router.navigate(['checkout/Success'], navigationExtras);
+       this.stripe.confirmCardPayment(basket.clientSecret, {
+         payment_method: {
+           card: this.cardNumber,
+           billing_details: {
+             name: this.checkoutForm.get('paymentForm').get('nameOnCard').value
+           }
+         }
+       }).then(result => {
+         console.log(result);
+         if (result.paymentIntent)
+         {
+          this.basketService.deleteLocalBasket(basket.id);
+          const navigationExtras: NavigationExtras = {state: order};
+          this.router.navigate(['checkout/Success'], navigationExtras);
+         }
+         else
+         {
+           this.toastr.error('Payment Failed!');
+         }
+       });
      }, error => {
        this.toastr.error(error);
        console.log(error);
