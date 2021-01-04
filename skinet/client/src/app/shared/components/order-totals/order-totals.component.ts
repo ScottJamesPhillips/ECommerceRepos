@@ -14,6 +14,7 @@ basketTotal$: Observable<IBasketTotals>;
   constructor(private basketService: BasketService) { }
 
   ngOnInit(): void {
+    console.log("Basket totals =" + this.basketTotal$)
     this.basketTotal$ = this.basketService.basketTotal$;
   }
 
