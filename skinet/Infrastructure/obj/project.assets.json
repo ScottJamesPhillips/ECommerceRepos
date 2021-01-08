@@ -2907,11 +2907,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
+      "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
       "projectName": "infrastructure",
-      "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
+      "projectPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
       "packagesPath": "C:\\Users\\sphillips\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\obj\\",
+      "outputPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -2930,8 +2930,8 @@
       "frameworks": {
         "netstandard2.1": {
           "projectReferences": {
-            "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
-              "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj"
+            "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
+              "projectPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj"
             }
           }
         }
@@ -2993,7 +2993,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
       }
     }
   }

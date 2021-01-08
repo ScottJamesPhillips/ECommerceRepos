@@ -26,6 +26,9 @@ cardCvc: any;
 cardError: any;
 cardHandler = this.onChange.bind(this);
 loading = false;
+cardNumberValid = false;
+cardExpiryValid = false;
+cardCVCValid = false;
 
   constructor(private basketService: BasketService,
               private checkoutService: CheckoutService,
@@ -61,15 +64,24 @@ loading = false;
 
   // 266.
   // tslint:disable-next-line:typedef
-  onChange({error}){
-    if (error)
+  onChange(event){
+    if (event.error)
     {
-      this.cardError = error.message;
+      this.cardError = event.error.message;
     }
     else
     {
       this.cardError = null;
     }
+    switch(event.elementType)
+    {
+      case 'cardNumber':
+        this.cardNumberValid = event.complete;
+      case 'cardExpiry':
+        this.cardExpiryValid = event.complete;
+      case 'cardCvc':
+        this.cardCVCValid = event.complete;
+    } 
   }
 
   // 246
@@ -94,7 +106,7 @@ loading = false;
 
       if (paymentResult.paymentIntent)
       {
-       this.basketService.deleteLocalBasket(basket.id);
+       this.basketService.deleteBasket(basket);
        const navigationExtras: NavigationExtras = {state: createdOrder};
        this.router.navigate(['checkout/Success'], navigationExtras);
       }

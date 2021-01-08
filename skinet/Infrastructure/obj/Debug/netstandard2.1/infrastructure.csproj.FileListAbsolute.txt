@@ -10,3 +10,15 @@ C:\Users\sphillips\Desktop\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp
 C:\Users\sphillips\Desktop\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.csproj.CopyComplete
 C:\Users\sphillips\Desktop\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.dll
 C:\Users\sphillips\Desktop\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.pdb
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\bin\Debug\netstandard2.1\infrastructure.deps.json
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\bin\Debug\netstandard2.1\infrastructure.dll
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\bin\Debug\netstandard2.1\infrastructure.pdb
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\bin\Debug\netstandard2.1\Core.dll
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\bin\Debug\netstandard2.1\Core.pdb
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.csprojAssemblyReference.cache
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.AssemblyInfoInputs.cache
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.AssemblyInfo.cs
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.csproj.CopyComplete
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.dll
+C:\Users\sphillips\Desktop\OldDocs\ScottUdemy\e-CommerceApp (.Net Core & Angular)\skiapp\skinet\skinet\infrastructure\obj\Debug\netstandard2.1\infrastructure.pdb

@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {}
+    "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {}
   },
   "projects": {
-    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
+    "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj",
+        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj",
         "projectName": "Core",
-        "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj",
+        "projectPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj",
         "packagesPath": "C:\\Users\\sphillips\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\obj\\",
+        "outputPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -61,18 +61,18 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {
+    "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
+        "projectUniqueName": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
         "projectName": "infrastructure",
-        "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
+        "projectPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\infrastructure.csproj",
         "packagesPath": "C:\\Users\\sphillips\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\obj\\",
+        "outputPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\infrastructure\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -91,8 +91,8 @@
         "frameworks": {
           "netstandard2.1": {
             "projectReferences": {
-              "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
-                "projectPath": "C:\\Users\\sphillips\\Desktop\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj"
+              "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj": {
+                "projectPath": "C:\\Users\\sphillips\\Desktop\\OldDocs\\ScottUdemy\\e-CommerceApp (.Net Core & Angular)\\skiapp\\skinet\\skinet\\Core\\Core.csproj"
               }
             }
           }
@@ -154,7 +154,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.301\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.404\\RuntimeIdentifierGraph.json"
         }
       }
     }

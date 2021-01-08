@@ -26,10 +26,8 @@ basket$: Observable<IBasket>;
   createPaymentIntent(){
     return this.basketService.createPaymentIntent().subscribe((response: any) => {
       this.appStepper.next();
-      this.toastr.success('Payment intent successfully created!');
     }, error => {
       console.log(error);
-      this.toastr.error(error.message);
     });
   }
 

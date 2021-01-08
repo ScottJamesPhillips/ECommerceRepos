@@ -15,6 +15,7 @@ export class AppComponent implements OnInit {
 
   ngOnInit(): void {
     this.loadBasket();
+    this.loadCurrentUser();
   }
 
   // tslint:disable-next-line:typedef
