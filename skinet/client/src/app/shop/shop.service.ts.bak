@@ -99,6 +99,11 @@ export class ShopService {
   }
   // tslint:disable-next-line: typedef
   getProduct(id: number){
+const product = this.products.find(p => p.id === id);
+
+    if (product) {
+      return of(product);
+    }
     return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
   }
 

@@ -15,7 +15,7 @@ export class ShopComponent implements OnInit {
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
-  shopParams = new ShopParams();
+  shopParams: ShopParams;
   totalCount: number;
   sortOptions = [
     {name: 'Alphabetical', value: 'name'},
@@ -23,21 +23,21 @@ export class ShopComponent implements OnInit {
     {name: 'Price: High to Low', value: 'priceDesc'},
   ];
 
-  constructor(private shopService: ShopService) { }
+  constructor(private shopService: ShopService) { 
+    this.shopParams = this.shopService.getShopParams();
+  }
 
   // tslint:disable-next-line:typedef
   ngOnInit() {
-    this.getProducts();
+    this.getProducts(true);
     this.getBrands();
     this.getTypes();
   }
 
   // tslint:disable-next-line:typedef
-  getProducts(){
-    this.shopService.getProducts(this.shopParams).subscribe(response => {
+  getProducts(useCache=false){
+    this.shopService.getProducts(useCache).subscribe(response => {
       this.products = response.data;
-      this.shopParams.pageNum = response.pageIndex;
-      this.shopParams.pageSize = response.pageSize;
       this.totalCount = response.count;
     }, error => {
       console.log(error);
@@ -64,37 +64,48 @@ export class ShopComponent implements OnInit {
 
   // tslint:disable-next-line:typedef
   onBrandSelected(brandId: number){
-    this.shopParams.brandId = brandId;
-    this.shopParams.pageNum = 1;
+    const params = this.shopService.getShopParams();
+    params.brandId = brandId;
+    params.pageNum = 1;
+    this.shopService.setShopParams(params);
     this.getProducts();
   }
 
   // tslint:disable-next-line:typedef
   onTypeSelected(typeId: number){
-    this.shopParams.typeId = typeId;
-    this.shopParams.pageNum = 1;
+    const params = this.shopService.getShopParams();
+    params.typeId = typeId;
+    params.pageNum = 1;
+    this.shopService.setShopParams(params);
     this.getProducts();
   }
 
   // tslint:disable-next-line:typedef
   onSortSelected(sort: string){
-    this.shopParams.sort = sort;
+    const params = this.shopService.getShopParams();
+    params.sort = sort;
+    this.shopService.setShopParams(params);
     this.getProducts();
   }
 
   // tslint:disable-next-line:typedef
   onPageChange(event: any){
-    if (this.shopParams.pageNum !== event)
+    const params = this.shopService.getShopParams();
+    if (params.pageNum !== event)
     {
-      this.shopParams.pageNum = event;
-      this.getProducts();
+      params.pageNum = event;
+      this.shopService.setShopParams(params);
+      this.getProducts(true);
     }
   }
 
   // tslint:disable-next-line:typedef
   onSearch()
   {
-    this.shopParams.search = this.searchTerm.nativeElement.value;
+    const params = this.shopService.getShopParams();
+    params.search = this.searchTerm.nativeElement.value;
+    params.pageNum = 1;
+    this.shopService.setShopParams(params);
     this.getProducts();
   }
 
@@ -102,7 +113,8 @@ export class ShopComponent implements OnInit {
   onReset()
   {
     this.searchTerm.nativeElement.value = '';
-    this.shopParams = new ShopParams();
+    const params = new ShopParams();
+    this.shopService.setShopParams(params);  
     this.getProducts();
   }
 }
