@@ -1,9 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { IPagination, Pagination } from '../shared/models/pagination';
-import {IBrand} from '../shared/models/brands';
-import {IType} from '../shared/models/productType';
-import {map, delay} from 'rxjs/operators';
+import { IBrand } from '../shared/models/brands';
+import { IType } from '../shared/models/productType';
+import { map, delay } from 'rxjs/operators';
 import { ShopParams } from '../shared/models/shopParams';
 import { IProduct } from '../shared/models/product';
 import { environment } from 'src/environments/environment';
@@ -12,7 +12,6 @@ import { of } from 'rxjs/internal/observable/of';
 @Injectable({
   providedIn: 'root'
 })
-
 export class ShopService {
   baseUrl = environment.apiUrl;
   products: IProduct[] = [];
@@ -23,19 +22,15 @@ export class ShopService {
 
   constructor(private http: HttpClient) { }
   // tslint:disable-next-line: typedef
- 
-  getProducts(useCache: boolean){
+  getProducts(useCache: boolean) {
     //285
-    if (useCache === false)
-    {
+    if (useCache === false) {
       this.products = [];
     }
-
-    //285
-    if(this.products.length>0 && useCache === true)
-    {
+	 //285
+    if (this.products.length > 0 && useCache === true) {
       const pagesReceived = 
-      Math.ceil(this.products.length/this.shopParams.pageSize);
+      Math.ceil(this.products.length / this.shopParams.pageSize);
       
       if(this.shopParams.pageNum <= pagesReceived)
       {
@@ -50,16 +45,15 @@ export class ShopService {
 
     let params = new HttpParams();
 
-    if (this.shopParams.brandId !== 0)
-    {
+    if (this.shopParams.brandId !== 0) {
       params = params.append('brandId', this.shopParams.brandId.toString());
     }
-    if (this.shopParams.typeId !== 0)
-    {
+
+    if (this.shopParams.typeId !== 0) {
       params = params.append('typeId', this.shopParams.typeId.toString());
     }
-    if (this.shopParams.search)
-    {
+
+    if (this.shopParams.search) {
       params = params.append('search', this.shopParams.search);
     }
 
@@ -67,39 +61,56 @@ export class ShopService {
     params = params.append('pageIndex', this.shopParams.pageNum.toString());
     params = params.append('pageSize', this.shopParams.pageSize.toString());
 
-    return this.http.get<IPagination>(this.baseUrl + 'products', {observe: 'response', params})
-    .pipe(
-       map(response => {
-         this.products = [...this.products, ...response.body.data];
-         this.pagination = response.body;
-         return this.pagination;
-       })
-    );
+    return this.http.get<IPagination>(this.baseUrl + 'products', { observe: 'response', params })
+      .pipe(
+        map(response => {
+          this.products = [...this.products, ...response.body.data];
+          this.pagination = response.body;
+          return this.pagination;
+        })
+      );
   }
-
   //284
-  setShopParams(params: ShopParams)
-  {
-    this.shopParams = params;
-  }
-
-  //284
-  getShopParams()
-  {
+  getShopParams() {
     return this.shopParams;
   }
 
-  // tslint:disable-next-line: typedef
-  getBrands(){
-    return this.http.get<IBrand[]>(this.baseUrl + 'products/brands');
-  }
-  // tslint:disable-next-line: typedef
-  getTypes(){
-    return this.http.get<IType[]>(this.baseUrl + 'products/types');
-  }
-  // tslint:disable-next-line: typedef
-  getProduct(id: number){
-    return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
+  //284
+   setShopParams(params: ShopParams) {
+    this.shopParams = params;
   }
 
+  // tslint:disable-next-line: typedef
+  getProduct(id: number) {
+    const product = this.products.find(p => p.id === id);
+
+    if (product) {
+      return of(product);
+    }
+    return this.http.get<IProduct>(this.baseUrl + 'products/' + id);
+  }
+  // tslint:disable-next-line: typedef
+  getBrands() {
+    if (this.brands.length > 0) {
+      return of(this.brands);
+    }
+    return this.http.get<IBrand[]>(this.baseUrl + 'products/brands').pipe(
+      map(response => {
+        this.brands = response;
+        return response;
+      })
+    );
+  }
+  // tslint:disable-next-line: typedef
+  getTypes() {
+    if (this.types.length > 0) {
+      return of(this.types);
+    }
+    return this.http.get<IType[]>(this.baseUrl + 'products/types').pipe(
+      map(response => {
+        this.types = response;
+        return response;
+      })
+    );
+  }
 }
